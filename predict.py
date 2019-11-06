@@ -30,7 +30,8 @@ if __name__== "__main__" :
 	model.load_weights('model.h5', by_name=True)
 
 	# load image
-	image = cv2.imread(args.path)
+	image = cv2.imread("images//{0}".format(args.path))
+	
 	start_time = time.time()
 	# convert pixel values (e.g. center)
 	scaled_image = mold_image(image, cfg)
@@ -46,4 +47,4 @@ if __name__== "__main__" :
 		# calculate width and height of the box
 		cv2.rectangle(image, (x1, y1), (x2, y2), (255,0,0), 1)
 		
-	cv2.imwrite("{0}-result.jpg".format(args.path[:-4]), image)
+	cv2.imwrite("images//{0}-result.jpg".format(args.path[:-4]), image)
