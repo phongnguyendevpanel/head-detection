@@ -2,4 +2,14 @@ FROM python:3.6.9-alpine
 
 WORKDIR a/app
 
+RUN apt-get update \ 
+	&& git clone https://github.com/phongnguyendevpanel/head-detection.git \
+	&& mv head-detection/* . \
+	&& rm -rf head-detection 
+
+RUN curl -Lo model.h5 https://robber-detection.s3-ap-southeast-1.amazonaws.com/Head-Detection-App/model.h5 \
+	&& curl -Lo mask_rcnn.tar.gz https://robber-detection.s3-ap-southeast-1.amazonaws.com/Head-Detection-App/mask_rcnn.tar.gz \
+	&& tar -xzvf mask_rcnn.tar.gz \
+	&& rm mask_rcnn.tar.gz 
+	
 CMD ["tail", "-f", "/dev/null"]
