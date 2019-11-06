@@ -11,5 +11,7 @@ RUN curl -Lo model.h5 https://robber-detection.s3-ap-southeast-1.amazonaws.com/H
 	&& curl -Lo mask_rcnn.tar.gz https://robber-detection.s3-ap-southeast-1.amazonaws.com/Head-Detection-App/mask_rcnn.tar.gz \
 	&& tar -xzvf mask_rcnn.tar.gz \
 	&& rm mask_rcnn.tar.gz 
-	
+
+RUN pip install -r requirements.txt
+
 CMD ["tail", "-f", "/dev/null"]
