@@ -1,0 +1,5 @@
+numpy
+tensorflow==1.14
+keras==2.3.0
+scikit-image
+opencv-python
