@@ -1,6 +1,6 @@
 FROM python:3.6.9-alpine
 
-WORKDIR a/app
+WORKDIR /app
 
 RUN apt-get update \ 
 	&& git clone https://github.com/phongnguyendevpanel/head-detection.git \
