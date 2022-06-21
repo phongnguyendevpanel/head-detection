@@ -1,5 +1,5 @@
 argparse==1.4.0
-numpy==1.17.3
+numpy==1.22.0
 tensorflow==1.14
 keras==2.3.0
 scikit-image==0.16.2
